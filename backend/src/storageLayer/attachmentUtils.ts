@@ -20,6 +20,6 @@ export class AttachmentUtils {
     }
 
     getAttachmentUrl(todoId: string) {
-        return `https://${this.bucketName}.s3.amazonaws.com/${todoId}`
+        return `https://${bucketName}.s3.amazonaws.com/${todoId}`
     }
 }

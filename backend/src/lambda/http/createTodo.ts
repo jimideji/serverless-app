@@ -12,7 +12,7 @@ export const handler = middy(
 
     // TODO: Implement creating a new TODO item
     const userId = getUserId(event)
-    const newItem = await createTodo({ newTodo, userId })
+    const newItem = await createTodo(newTodo, userId)
 
     return {
       statusCode: 201,

@@ -10,7 +10,6 @@ import { UpdateTodoRequest } from '../requests/UpdateTodoRequest'
 // TODO: Implement businessLogic
 const attachmentUtils = new AttachmentUtils()
 const todosAccess = new TodosAccess()
-// const uuidv4 = require('uuid/v4');
 
 export async function createTodo(newTodo: CreateTodoRequest, userId: string): Promise<TodoItem> {
     const todoId = uuid.v4()
@@ -29,14 +28,14 @@ export async function createTodo(newTodo: CreateTodoRequest, userId: string): Pr
 }
   
 export async function updateTodo(userId: string, todoId: string, todoUpdate: UpdateTodoRequest): Promise<TodoUpdate> {
-    return await todosAccess.updateTodos(userId, todoId, todoUpdate)
+    return await todosAccess.updateTodo(userId, todoId, todoUpdate)
 }
   
 export async function deleteTodo(userId: string, todoId: string): Promise<string> {
     return await todosAccess.deleteTodo(userId, todoId)
 }
 
-export async function addAttachmentUrl(todoId: string, userId: string): Promise<string> {
+export async function addAttachmentUrl(todoId: string): Promise<string> {
     return await attachmentUtils.uploadAttachment(todoId)
 }
   
